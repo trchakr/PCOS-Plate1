@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #308FA2;
+    line-height: 1.6;
+    background-color: #DAFBFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Header Styles */
+header {
+    background-color: #006579;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.site-title {
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    gap: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+.header-box {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0;
+    color: #308FA2;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label, .slider-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #308FA2;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #41b8d6;
+    border-radius: 10px;
+    background-color: #f9fdfe;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #308FA2;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-select:after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    color: #308FA2;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #FF6884;
+}
+
+.slider-container {
+    margin: 30px 0;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: #e0f7fa;
+    outline: none;
+    margin: 15px 0 25px 0;
+    border: 1px solid #b2ebf2;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #308FA2;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #308FA2;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: #FF6884;
+}
+
+.slider::-moz-range-thumb:hover {
+    background: #FF6884;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #308FA2;
+}
+
+.slider-value {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #308FA2;
+    margin: 5px 0;
+}
+
+.choice-description {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    color: #308FA2;
+    margin-bottom: 15px;
+}
+
+.form-final {
+    text-align: center;
+    margin: 30px 0 15px 0;
+}
+
+.form-final label {
+    font-weight: 600;
+    font-size: 18px;
+    color: #308FA2;
+}
+
+button {
+    background-color: #308FA2;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF6884;
+    transform: translateY(-2px);
+}
+
+#result {
+    padding: 25px;
+    border-radius: 15px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+#result.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#result h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#result p {
+    margin: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #003742;
+    color: white;
+    padding: 60px 40px 20px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-info {
+    flex: 0 0 35%;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.footer-description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    flex: 0 0 25%;
+}
+
+.footer-links h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    padding: 0;
+    margin-left: 30px;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+.footer-illustration {
+    flex: 0 0 30%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer-illustration img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-divider {
+    max-width: 1200px;
+    margin: 30px auto;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+footer p a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 100;
+}
+
+footer p a:hover {
+    color: #e3e3e3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-info, .footer-links, .footer-illustration {
+        flex: 0 0 100%;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .navigation {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+/* Results styling */
+#results {
+    display: none; /* Hide initially */
+}
+
+/* Results header */
+.results-header {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.results-header h2 {
+    color: #308FA2;
+    font-size: 32px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0;
+    color: #308FA2;
+}
+
+/* Recipe grid layout */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Recipe card styling */
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    height: 100%;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image container */
+.recipe-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Recipe image */
+.recipe-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .recipe-image {
+    transform: scale(1.05);
+}
+
+/* Content container */
+.recipe-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+}
+
+/* Recipe title */
+.recipe-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #308FA2;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Recipe info row */
+.recipe-info {
+    font-family: 'Open Sans';
+    display: flex;
+    gap: 16px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.info-icon {
+    font-size: 16px;
+}
+
+/* Recipe ID */
+.recipe-id {
+    position: absolute;
+    top: 5px;
+    right: 16px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Recipe ingredients */
+.recipe-ingredients {
+    margin: 12px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Recipe summary */
+.recipe-summary {
+    margin: 12px 0;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    font-style: italic;
+    color: #003742;
+    opacity: 0.8;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* View recipe button */
+.view-recipe-btn {
+    display: inline-block;
+    background-color: #308FA2;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-recipe-btn:hover {
+    background-color: #FF6884;
+    transform: translateY(-2px);
+}
+
+/* No results message */
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #003742;
+    font-style: italic;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="mystyle1.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS Plate - Find Your Recipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+       
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="PCOS Plate Logo">
+            <a href="index.html" class="site-title">PCOS Plate</a>
+        </div>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a style="text-decoration: underline;" href="PCOS_form(4).html">Recipe Planner</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="header-box">
+            <h1>Build Your Meal Plan</h1>
+        </div>
+
+        <div class="form-container">
+            <form id="choiceForm">
+                <div class="slider-container">
+                    <label for="satisfactionSlider">How severe is your PCOS?</label>
+                    <div class="slider-value" id="satisfactionValue">3</div>
+                    <div class="choice-description" id="satisfactionDescription">Moderate</div>
+
+                    <input type="range" min="1" max="5" value="3" class="slider" id="satisfactionSlider" name="satisfaction">
+              
+                    <div class="slider-labels">
+                        <span>Very Mild</span>
+                        <span>Mild</span>
+                        <span>Moderate</span>
+                        <span>Strong</span>
+                        <span>Severe</span>
+                    </div>
+                </div>
+                
+                 <!--main food (query)-->
+                <div class="form-group">
+                    <label for="goal">What is your primary dieting goal?</label>
+                    <div class="custom-select">
+                        <select id="goal" name="goal">
+                            <option value="salmon|olive oil|avocado">Reduce inflammation</option>
+                            <option value="fruits|berries|vegetables|yoghurt">Lose weight</option>
+                            <option value="fish|vegetables|legumes">Manage insulin</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prep">How much time are you willing to devote to meal prep?</label>
+                    <div class="custom-select">
+                        <select id="prep" name="prep">
+                            <option value="1hr">1hr per meal</option>
+                            <option value="2hr">1 - 2 hours</option>
+                            <option value="3hr">2 - 3 hours</option>
+                            <option value="4hr">3+ hours</option>
+                        </select>
+                    </div>
+                </div>
+                
+                 <!--fat (limit)-->
+                <div class="form-group">
+                    <label for="active">How active are you?</label>
+                    <div class="custom-select">
+                        <select id="active" name="active">
+                            <option value="9">Rarely active</option>
+                            <option value="11">Sometimes active</option>
+                            <option value="13">Moderately active</option>
+                            <option value="15">Very active</option>
+                        </select>
+                    </div>
+                </div>
+                
+                 <!--sugar (limit)-->
+                <div class="form-group">
+                    <label for="cravings">Do you experience strong cravings?</label>
+                    <div class="custom-select">
+                        <select id="cravings" name="cravings">
+                            <option value="5">Yes!</option>
+                            <option value="10">No :)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--vegan (query)-->
+                <div class="form-group">
+                    <label for="diet">Are you vegan/vegetarian?</label>
+                    <div class="custom-select">
+                        <select id="diet" name="diet">
+                            <option value="">No</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-final">
+                    <label>Finished?</label>
+                </div>
+                
+                <div class="form-final">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="result"></div>
+        
+        <!-- Add results container that was missing -->
+        <div id="results">
+            <div id="resultsList"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="PCOS Plate Logo">
+                    <span class="site-title">PCOS Plate</span>
+                </div>
+                <p class="footer-description">
+                    PCOS Plate offers personalized meal planning and
+                    resources designed to support women managing
+                    PCOS. We believe in empowering individuals to take
+                    control of their health through tailored nutrition and
+                    easy-to-follow meal solutions.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="PCOS_form(4).html">Recipe Planner</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-illustration">
+                <img src="images/footer-illustration.svg" alt="Women with flowers illustration">
+            </div>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-copyright">
+            <p>© 2025 
+                <a href="https://www.linkedin.com/in/felicia-xie-844510295/" target="_blank">Felicia</a> | 
+                <a href="https://www.linkedin.com/in/trishachakrabarty/" target="_blank">Trisha</a> | 
+                <a href="https://www.linkedin.com/in/angela-miao-091530270/" target="_blank">Angela</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Add at the top of your script
+document.addEventListener('DOMContentLoaded', function() {
+    const resultsSection = document.getElementById('results');
+    if (resultsSection) {
+        resultsSection.style.display = 'none';
+    }
+});
+
+        // First slider - Satisfaction
+        const satisfactionSlider = document.getElementById('satisfactionSlider');
+        const satisfactionValue = document.getElementById('satisfactionValue');
+        const satisfactionDescription = document.getElementById('satisfactionDescription');
+        
+        satisfactionSlider.oninput = function() {
+            satisfactionValue.textContent = this.value;
+            
+            // Update description based on value
+            if (this.value <= 1) {
+                satisfactionDescription.textContent = "Very Mild";
+            } else if (this.value <= 2) {
+                satisfactionDescription.textContent = "Mild";
+            } else if (this.value <= 3) {
+                satisfactionDescription.textContent = "Moderate";
+            } else if (this.value <= 4) {
+                satisfactionDescription.textContent = "Strong";
+            } else {
+                satisfactionDescription.textContent = "Severe";
+            }
+        };
+
+        // Form submission
+        const form = document.getElementById('choiceForm');
+        const resultDiv = document.getElementById('result');
+        
+        form.addEventListener('submit', function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+            // Add this line right after event.preventDefault() in your form submission function
+document.getElementById('results').style.display = 'block';
+            
+            const satisfactionVal = satisfactionSlider.value;
+            const satisfactionDesc = satisfactionDescription.textContent;
+            
+            const mainFood = document.getElementById('goal').value;
+            const prepTime = document.getElementById('prep').value;
+            const fatLimit = document.getElementById('active').value;
+            const sugarLimit = document.getElementById('cravings').value;
+            const diet = document.getElementById('diet').value;
+            const limit = 7;
+            
+            // Get form values
+            const apiKey = "89dfb5f8ca6943309ed54c8358273b96";
+
+            // Build the API URL with query parameters
+            let apiUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=' + apiKey;
+            apiUrl += '&includeIngredients=' + encodeURIComponent(mainFood);
+            
+            // Only add diet parameter if it's not empty
+            if (diet) {
+                apiUrl += '&diet=' + encodeURIComponent(diet);
+            }
+            
+            apiUrl += '&maxFat=' + encodeURIComponent(fatLimit);
+            apiUrl += '&maxSugar=' + encodeURIComponent(sugarLimit);
+            apiUrl += '&addRecipeInformation=true'
+            apiUrl += '&number=' + encodeURIComponent(limit); // Spoonacular uses "number" not "limit"
+            
+            // Show loading state
+            document.getElementById('resultsList').innerHTML = 'Loading...';
+            document.getElementById('results').style.display = 'block';
+            
+            console.log("Requesting URL:", apiUrl); // Debug info
+            
+            // Fetch data from API
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        console.log('Status:', response.status, response.statusText);
+                        return response.text().then(text => {
+                            console.log('Response body:', text);
+                            throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("API response:", data); // Debug info
+                    displayResults(data);
+                    
+                    
+                    // Show result div
+                    resultDiv.classList.add('show'); 
+                })
+                .catch(error => {
+                    document.getElementById('resultsList').innerHTML = 
+                        'Error fetching results: ' + error.message;
+                    console.error('Fetch error:', error);
+                });
+        });
+        
+      // Modified displayResults function only
+function displayResults(data) {
+    const resultsDiv = document.getElementById('resultsList');
+    
+    // Clear previous results
+    resultsDiv.innerHTML = '';
+    
+    // Add header to the results section
+    const headerContainer = document.createElement('div');
+    headerContainer.className = 'results-header';
+    const header = document.createElement('h2');
+    header.textContent = 'Recommended Recipes';
+    headerContainer.appendChild(header);
+    resultsDiv.appendChild(headerContainer);
+    
+    // Check if we have results
+    if (data.results && data.results.length > 0) {
+        // Create a grid container for results
+        const grid = document.createElement('div');
+        grid.className = 'recipe-grid';
+        
+        data.results.forEach(recipe => {
+            // Create recipe card
+            const card = document.createElement('div');
+            card.className = 'recipe-card';
+            
+            // Create image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'recipe-image-container';
+            
+            // Create and add image
+            const img = document.createElement('img');
+            img.src = recipe.image;
+            img.alt = recipe.title;
+            img.className = 'recipe-image';
+            imageContainer.appendChild(img);
+            
+            // Create content container
+            const contentContainer = document.createElement('div');
+            contentContainer.className = 'recipe-content';
+            
+            // Add title
+            const title = document.createElement('h3');
+            title.textContent = recipe.title;
+            title.className = 'recipe-title';
+            
+            // Create info container for recipe details
+            const infoContainer = document.createElement('div');
+            infoContainer.className = 'recipe-info';
+            
+            // Add ready in minutes with icon
+            const timeInfo = document.createElement('div');
+            timeInfo.className = 'info-item';
+            timeInfo.innerHTML = `<span class="info-icon">⏱️</span> ${recipe.readyInMinutes} min`;
+            
+            // Add servings with icon
+            const servingsInfo = document.createElement('div');
+            servingsInfo.className = 'info-item';
+            servingsInfo.innerHTML = `<span class="info-icon">👥</span> ${recipe.servings} servings`;
+            
+            // Add ID in a subtle way
+            const idInfo = document.createElement('div');
+            idInfo.className = 'recipe-id';
+            idInfo.textContent = `#${recipe.id}`;
+            
+            // Add ingredients preview
+            let ingredientsText = '';
+            if (recipe.extendedIngredients && recipe.extendedIngredients.length > 0) {
+                const ingredientCount = recipe.extendedIngredients.length;
+                const ingredientsList = recipe.extendedIngredients
+                    .slice(0, 3)
+                    .map(ing => ing.name)
+                    .join(', ');
+                
+                ingredientsText = `${ingredientsList}${ingredientCount > 3 ? ` + ${ingredientCount - 3} more` : ''}`;
+            }
+            
+            const ingredients = document.createElement('div');
+            ingredients.className = 'recipe-ingredients';
+            
+            // Add summary if available (truncated)
+            if (recipe.summary) {
+                const summary = document.createElement('div');
+                summary.className = 'recipe-summary';
+                // Remove HTML tags and truncate
+                const plainSummary = recipe.summary.replace(/<[^>]*>/g, '');
+                summary.textContent = plainSummary.length > 120 ? 
+                    plainSummary.substring(0, 120) + '...' : plainSummary;
+                contentContainer.appendChild(summary);
+            }
+            
+            // Create "View Recipe" button
+            const viewRecipeBtn = document.createElement('a');
+            viewRecipeBtn.href = recipe.sourceUrl;
+            viewRecipeBtn.target = '_blank';
+            viewRecipeBtn.textContent = 'View Full Recipe';
+            viewRecipeBtn.className = 'view-recipe-btn';
+            
+            // Assemble the info container
+            infoContainer.appendChild(timeInfo);
+            infoContainer.appendChild(servingsInfo);
+            
+            // Assemble the content container
+            contentContainer.appendChild(title);
+            contentContainer.appendChild(infoContainer);
+            contentContainer.appendChild(idInfo);
+            contentContainer.appendChild(ingredients);
+            contentContainer.appendChild(viewRecipeBtn);
+            
+            // Assemble the card
+            card.appendChild(imageContainer);
+            card.appendChild(contentContainer);
+            
+            // Add the card to the grid
+            grid.appendChild(card);
+        });
+        
+        resultsDiv.appendChild(grid);
+    } else {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No recipes found. Try different ingredients or criteria.';
+        resultsDiv.appendChild(noResults);
+    }
+}
+
+    </script>
+</body>
+</html>
