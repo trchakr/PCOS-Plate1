@@ -60,7 +60,7 @@ header {
 }
 
 .navigation a:hover {
-    text-decoration: underline;
+    color: #d5e3e6;
 }
 
 /* Main content styles */
