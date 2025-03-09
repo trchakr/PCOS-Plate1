@@ -217,13 +217,14 @@ document.getElementById('results').style.display = 'block';
             const fatLimit = document.getElementById('active').value;
             const sugarLimit = document.getElementById('cravings').value;
             const diet = document.getElementById('diet').value;
-            const limit = 7;
+            const limit = 6;
             
             // Get form values
-            const apiKey = "89dfb5f8ca6943309ed54c8358273b96";
+            const apiKey = "be13df896ada4eb6b444049b8e7746fb";
 
             // Build the API URL with query parameters
             let apiUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=' + apiKey;
+            apiUrl += '&sort=random'
             apiUrl += '&includeIngredients=' + encodeURIComponent(mainFood);
             
             // Only add diet parameter if it's not empty
