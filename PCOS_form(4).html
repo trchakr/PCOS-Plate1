@@ -53,6 +53,7 @@
                     <label for="goal">What is your primary dieting goal?</label>
                     <div class="custom-select">
                         <select id="goal" name="goal">
+                            <option value="" selected disabled>Select your goal</option>
                             <option value="salmon|olive oil|avocado">Reduce inflammation</option>
                             <option value="fruits|berries|vegetables|yoghurt">Lose weight</option>
                             <option value="fish|vegetables|legumes">Manage insulin</option>
@@ -64,6 +65,7 @@
                     <label for="prep">How much time are you willing to devote to meal prep?</label>
                     <div class="custom-select">
                         <select id="prep" name="prep">
+                            <option value="" selected disabled>Select time</option>
                             <option value="1hr">1hr per meal</option>
                             <option value="2hr">1 - 2 hours</option>
                             <option value="3hr">2 - 3 hours</option>
@@ -77,6 +79,7 @@
                     <label for="active">How active are you?</label>
                     <div class="custom-select">
                         <select id="active" name="active">
+                            <option value="" selected disabled>Select activity level</option>
                             <option value="9">Rarely active</option>
                             <option value="11">Sometimes active</option>
                             <option value="13">Moderately active</option>
@@ -90,6 +93,7 @@
                     <label for="cravings">Do you experience strong cravings?</label>
                     <div class="custom-select">
                         <select id="cravings" name="cravings">
+                            <option value="" selected disabled>Select an option</option>
                             <option value="5">Yes!</option>
                             <option value="10">No :)</option>
                         </select>
@@ -101,9 +105,10 @@
                     <label for="diet">Are you vegan/vegetarian?</label>
                     <div class="custom-select">
                         <select id="diet" name="diet">
-                            <option value="">No</option>
+                            <option value="" selected disabled>Select diet</option>
                             <option value="vegan">Vegan</option>
                             <option value="vegetarian">Vegetarian</option>
+                            <option value="">Neither</option>
                             
                         </select>
                     </div>
